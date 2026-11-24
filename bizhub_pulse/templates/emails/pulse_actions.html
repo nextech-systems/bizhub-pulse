@@ -1,0 +1,2 @@
+<p>{{ _("You have a new action from {0}.").format(meeting.space|e) }}</p>
+<ul>{% for a in actions %}<li><a href="{{ frappe.utils.get_url_to_form('Pulse Action', a.name) }}">{{ a.title|e }}</a> · {{ _("due") }} {{ frappe.utils.formatdate(a.due_date) }}</li>{% endfor %}</ul>

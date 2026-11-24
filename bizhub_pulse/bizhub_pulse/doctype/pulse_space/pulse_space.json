@@ -1,0 +1,259 @@
+{
+ "actions": [],
+ "autoname": "field:space_name",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "space_name",
+  "space_type",
+  "visibility",
+  "cb1",
+  "person_user",
+  "parent_space",
+  "company",
+  "department",
+  "project",
+  "disabled",
+  "description",
+  "members_section",
+  "members",
+  "cadence_section",
+  "cadence",
+  "meeting_weekday",
+  "meeting_time",
+  "duration_minutes",
+  "schedule_ahead_days",
+  "cb2",
+  "default_template",
+  "default_facilitator",
+  "default_secretary",
+  "location",
+  "join_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "space_name",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Space Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Team",
+   "fieldname": "space_type",
+   "fieldtype": "Select",
+   "idx": 2,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "Company\nTeam\nPerson\nProject",
+   "reqd": 1
+  },
+  {
+   "default": "Private",
+   "description": "Private: anyone can see the space exists, only members see its content. Secret: only members (and Pulse Admins) know it exists.",
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Visibility",
+   "options": "Private\nSecret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "idx": 4
+  },
+  {
+   "depends_on": "eval:doc.space_type=='Person'",
+   "fieldname": "person_user",
+   "fieldtype": "Link",
+   "idx": 5,
+   "label": "Person",
+   "mandatory_depends_on": "eval:doc.space_type=='Person'",
+   "options": "User"
+  },
+  {
+   "fieldname": "parent_space",
+   "fieldtype": "Link",
+   "idx": 6,
+   "label": "Parent Space",
+   "options": "Pulse Space"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "idx": 7,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "idx": 8,
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "depends_on": "eval:doc.space_type=='Project'",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "idx": 9,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "idx": 10,
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "idx": 11,
+   "label": "Description"
+  },
+  {
+   "fieldname": "members_section",
+   "fieldtype": "Section Break",
+   "idx": 12,
+   "label": "Members"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "idx": 13,
+   "label": "Members",
+   "options": "Pulse Space Member"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "cadence_section",
+   "fieldtype": "Section Break",
+   "idx": 14,
+   "label": "Meeting Rhythm"
+  },
+  {
+   "default": "None",
+   "fieldname": "cadence",
+   "fieldtype": "Select",
+   "idx": 15,
+   "label": "Cadence",
+   "options": "None\nWeekly\nFortnightly\nWeekdays"
+  },
+  {
+   "depends_on": "eval:['Weekly','Fortnightly'].includes(doc.cadence)",
+   "fieldname": "meeting_weekday",
+   "fieldtype": "Select",
+   "idx": 16,
+   "label": "Weekday",
+   "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday"
+  },
+  {
+   "depends_on": "eval:doc.cadence!='None'",
+   "fieldname": "meeting_time",
+   "fieldtype": "Time",
+   "idx": 17,
+   "label": "Meeting Time"
+  },
+  {
+   "default": "90",
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "idx": 18,
+   "label": "Length (minutes)"
+  },
+  {
+   "default": "14",
+   "fieldname": "schedule_ahead_days",
+   "fieldtype": "Int",
+   "idx": 19,
+   "label": "Create Meetings Ahead (days)"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "idx": 20
+  },
+  {
+   "fieldname": "default_template",
+   "fieldtype": "Link",
+   "idx": 21,
+   "label": "Default Template",
+   "options": "Pulse Meeting Template"
+  },
+  {
+   "fieldname": "default_facilitator",
+   "fieldtype": "Link",
+   "idx": 22,
+   "label": "Default Facilitator",
+   "options": "User"
+  },
+  {
+   "fieldname": "default_secretary",
+   "fieldtype": "Link",
+   "idx": 23,
+   "label": "Default Secretary",
+   "options": "User"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "idx": 24,
+   "label": "Location"
+  },
+  {
+   "fieldname": "join_url",
+   "fieldtype": "Data",
+   "idx": 25,
+   "label": "Teams / Zoom Link",
+   "options": "URL"
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Space",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "search_fields": "space_type,department",
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "space_name",
+ "track_changes": 1
+}

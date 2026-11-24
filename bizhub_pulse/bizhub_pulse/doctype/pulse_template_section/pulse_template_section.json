@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_type",
+  "title",
+  "minutes",
+  "guidance"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_type",
+   "fieldtype": "Select",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Section Type",
+   "options": "Opening\nScorecard\nPriorities\nHeadlines\nAction Review\nIssue Solving\nConclusion\nCustom",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Int",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Minutes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "guidance",
+   "fieldtype": "Small Text",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "Guidance"
+  }
+ ],
+ "issingle": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Template Section",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

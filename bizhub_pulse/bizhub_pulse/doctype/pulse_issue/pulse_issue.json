@@ -1,0 +1,241 @@
+{
+ "actions": [],
+ "autoname": "PI-.YYYY.-.#####",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "space",
+  "status",
+  "visibility",
+  "cb1",
+  "issue_owner",
+  "raised_by",
+  "rank",
+  "details_section",
+  "details",
+  "discussion",
+  "resolution",
+  "links_section",
+  "reference_doctype",
+  "reference_name",
+  "priority",
+  "raised_in",
+  "solved_in",
+  "closed_on",
+  "cb2",
+  "escalated_to",
+  "escalated_issue",
+  "escalated_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Space",
+   "options": "Pulse Space",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 3,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nSolved\nDropped\nEscalated"
+  },
+  {
+   "default": "Team",
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "idx": 4,
+   "label": "Visibility",
+   "options": "Team\nRestricted"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "idx": 5
+  },
+  {
+   "fieldname": "issue_owner",
+   "fieldtype": "Link",
+   "idx": 6,
+   "in_standard_filter": 1,
+   "label": "Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "raised_by",
+   "fieldtype": "Link",
+   "idx": 7,
+   "label": "Raised By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rank",
+   "fieldtype": "Int",
+   "idx": 8,
+   "label": "Rank"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "idx": 9
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Text Editor",
+   "idx": 10,
+   "label": "Details"
+  },
+  {
+   "fieldname": "discussion",
+   "fieldtype": "Text Editor",
+   "idx": 11,
+   "label": "Discussion Notes"
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Small Text",
+   "idx": 12,
+   "label": "Resolution"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "idx": 13,
+   "label": "Links"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "idx": 14,
+   "label": "Linked DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "idx": 15,
+   "label": "Linked Record",
+   "options": "reference_doctype"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Link",
+   "idx": 16,
+   "label": "Priority",
+   "options": "Pulse Priority"
+  },
+  {
+   "fieldname": "raised_in",
+   "fieldtype": "Link",
+   "idx": 17,
+   "label": "Raised In",
+   "options": "Pulse Meeting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "solved_in",
+   "fieldtype": "Link",
+   "idx": 18,
+   "label": "Solved In",
+   "options": "Pulse Meeting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "idx": 19,
+   "label": "Closed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "idx": 20
+  },
+  {
+   "fieldname": "escalated_to",
+   "fieldtype": "Link",
+   "idx": 21,
+   "label": "Escalated To",
+   "options": "Pulse Space",
+   "read_only": 1
+  },
+  {
+   "fieldname": "escalated_issue",
+   "fieldtype": "Link",
+   "idx": 22,
+   "label": "Escalated As",
+   "options": "Pulse Issue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "escalated_from",
+   "fieldtype": "Link",
+   "idx": 23,
+   "label": "Escalated From",
+   "options": "Pulse Issue",
+   "read_only": 1
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Issue",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "search_fields": "title,space,status",
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

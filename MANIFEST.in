@@ -1,0 +1,3 @@
+include MANIFEST.in README.md LICENSE pyproject.toml setup.py
+graft bizhub_pulse
+global-exclude *.py[cod] __pycache__

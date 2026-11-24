@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "autoname": "PD-.YYYY.-.#####",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "decision",
+  "space",
+  "status",
+  "reason",
+  "cb1",
+  "meeting",
+  "issue",
+  "priority",
+  "approved_by",
+  "decided_on",
+  "review_date",
+  "publish",
+  "locked",
+  "links_section",
+  "supersedes",
+  "superseded_by",
+  "reference_doctype",
+  "reference_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "decision",
+   "fieldtype": "Small Text",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Decision",
+   "reqd": 1
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Space",
+   "options": "Pulse Space",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 3,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Active\nSuperseded\nReversed"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "idx": 4,
+   "label": "Reason"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "idx": 5
+  },
+  {
+   "fieldname": "meeting",
+   "fieldtype": "Link",
+   "idx": 6,
+   "label": "Meeting",
+   "options": "Pulse Meeting"
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Link",
+   "idx": 7,
+   "label": "Issue",
+   "options": "Pulse Issue"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Link",
+   "idx": 8,
+   "label": "Priority",
+   "options": "Pulse Priority"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "idx": 9,
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "default": "Today",
+   "fieldname": "decided_on",
+   "fieldtype": "Date",
+   "idx": 10,
+   "label": "Decided On"
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "idx": 11,
+   "label": "Review Date"
+  },
+  {
+   "default": "1",
+   "fieldname": "publish",
+   "fieldtype": "Check",
+   "idx": 12,
+   "label": "Include in Published Summary"
+  },
+  {
+   "fieldname": "locked",
+   "fieldtype": "Check",
+   "idx": 13,
+   "label": "Locked",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "idx": 14,
+   "label": "Links"
+  },
+  {
+   "fieldname": "supersedes",
+   "fieldtype": "Link",
+   "idx": 15,
+   "label": "Supersedes",
+   "options": "Pulse Decision"
+  },
+  {
+   "fieldname": "superseded_by",
+   "fieldtype": "Link",
+   "idx": 16,
+   "label": "Superseded By",
+   "options": "Pulse Decision",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "idx": 17,
+   "label": "Linked DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "idx": 18,
+   "label": "Linked Record",
+   "options": "reference_doctype"
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Decision",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "search_fields": "space,status",
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "decision",
+ "track_changes": 1
+}

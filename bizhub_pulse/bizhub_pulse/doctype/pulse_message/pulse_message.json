@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "autoname": "PM-.YYYY.-.#####",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "message",
+  "from_space",
+  "status",
+  "from_meeting",
+  "communicator",
+  "sent_at",
+  "targets"
+ ],
+ "fields": [
+  {
+   "fieldname": "message",
+   "fieldtype": "Small Text",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Message",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_space",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "From Space",
+   "options": "Pulse Space",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_meeting",
+   "fieldtype": "Link",
+   "idx": 4,
+   "label": "From Meeting",
+   "options": "Pulse Meeting"
+  },
+  {
+   "fieldname": "communicator",
+   "fieldtype": "Link",
+   "idx": 5,
+   "label": "Person to Communicate It",
+   "options": "User"
+  },
+  {
+   "fieldname": "sent_at",
+   "fieldtype": "Datetime",
+   "idx": 6,
+   "label": "Sent At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "targets",
+   "fieldtype": "Table",
+   "idx": 7,
+   "label": "Send To Spaces",
+   "options": "Pulse Message Target",
+   "reqd": 1
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Message",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "message",
+ "track_changes": 1
+}

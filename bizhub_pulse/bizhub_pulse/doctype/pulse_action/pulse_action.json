@@ -1,0 +1,276 @@
+{
+ "actions": [],
+ "autoname": "PA-.YYYY.-.#####",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "space",
+  "assigned_to",
+  "due_date",
+  "status",
+  "cb1",
+  "visibility",
+  "assigned_by",
+  "carried_over",
+  "details",
+  "completion_section",
+  "evidence_required",
+  "completion_note",
+  "evidence",
+  "cb2",
+  "completed_on",
+  "verified_by",
+  "verified_on",
+  "links_section",
+  "source_meeting",
+  "reviewed_in",
+  "issue",
+  "decision",
+  "priority",
+  "message",
+  "reference_doctype",
+  "reference_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Space",
+   "options": "Pulse Space",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "idx": 3,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Owner",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 5,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nDone\nNot Done\nCancelled"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "idx": 6
+  },
+  {
+   "default": "Team",
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "idx": 7,
+   "label": "Visibility",
+   "options": "Team\nRestricted"
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "idx": 8,
+   "label": "Assigned By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "carried_over",
+   "fieldtype": "Int",
+   "idx": 9,
+   "label": "Times Carried Over",
+   "read_only": 1
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Small Text",
+   "idx": 10,
+   "label": "Details"
+  },
+  {
+   "fieldname": "completion_section",
+   "fieldtype": "Section Break",
+   "idx": 11,
+   "label": "Completion"
+  },
+  {
+   "fieldname": "evidence_required",
+   "fieldtype": "Check",
+   "idx": 12,
+   "label": "Evidence Required"
+  },
+  {
+   "fieldname": "completion_note",
+   "fieldtype": "Small Text",
+   "idx": 13,
+   "label": "Completion Note"
+  },
+  {
+   "fieldname": "evidence",
+   "fieldtype": "Attach",
+   "idx": 14,
+   "label": "Evidence"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "idx": 15
+  },
+  {
+   "fieldname": "completed_on",
+   "fieldtype": "Date",
+   "idx": 16,
+   "label": "Completed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Link",
+   "idx": 17,
+   "label": "Verified By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "verified_on",
+   "fieldtype": "Datetime",
+   "idx": 18,
+   "label": "Verified On",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "idx": 19,
+   "label": "Links"
+  },
+  {
+   "fieldname": "source_meeting",
+   "fieldtype": "Link",
+   "idx": 20,
+   "label": "Source Meeting",
+   "options": "Pulse Meeting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reviewed_in",
+   "fieldtype": "Link",
+   "idx": 21,
+   "label": "Reviewed In",
+   "options": "Pulse Meeting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Link",
+   "idx": 22,
+   "label": "Issue",
+   "options": "Pulse Issue"
+  },
+  {
+   "fieldname": "decision",
+   "fieldtype": "Link",
+   "idx": 23,
+   "label": "Decision",
+   "options": "Pulse Decision"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Link",
+   "idx": 24,
+   "label": "Priority",
+   "options": "Pulse Priority"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Link",
+   "idx": 25,
+   "label": "Communicates Message",
+   "options": "Pulse Message",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "idx": 26,
+   "label": "Linked DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "idx": 27,
+   "label": "Linked Record",
+   "options": "reference_doctype"
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Action",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "search_fields": "title,assigned_to,status",
+ "show_title_field_in_link": 0,
+ "sort_field": "due_date",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

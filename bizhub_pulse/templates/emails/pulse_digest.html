@@ -1,0 +1,3 @@
+{% if overdue %}<p><strong>{{ _("Overdue") }}</strong></p><ul>{% for a in overdue %}<li>{{ a.title|e }} · {{ a.space|e }} · {{ _("was due") }} {{ frappe.utils.formatdate(a.due_date) }}</li>{% endfor %}</ul>{% endif %}
+{% if due %}<p><strong>{{ _("Due soon") }}</strong></p><ul>{% for a in due %}<li>{{ a.title|e }} · {{ a.space|e }} · {{ _("due") }} {{ frappe.utils.formatdate(a.due_date) }}</li>{% endfor %}</ul>{% endif %}
+<p><a href="{{ url }}">{{ _("Open My Pulse") }}</a></p>

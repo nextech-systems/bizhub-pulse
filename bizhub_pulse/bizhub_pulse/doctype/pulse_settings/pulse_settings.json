@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "default_due_days",
+  "digest_enabled",
+  "linkable_doctypes"
+ ],
+ "fields": [
+  {
+   "default": "7",
+   "fieldname": "default_due_days",
+   "fieldtype": "Int",
+   "idx": 1,
+   "label": "Default Action Due (days)"
+  },
+  {
+   "default": "1",
+   "fieldname": "digest_enabled",
+   "fieldtype": "Check",
+   "idx": 2,
+   "label": "Send Daily Digest"
+  },
+  {
+   "fieldname": "linkable_doctypes",
+   "fieldtype": "Table",
+   "idx": 3,
+   "label": "Show Pulse Buttons On",
+   "options": "Pulse Linkable DocType"
+  }
+ ],
+ "issingle": 1,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

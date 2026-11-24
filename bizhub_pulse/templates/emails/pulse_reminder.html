@@ -1,0 +1,4 @@
+<p>{{ _("{0} is tomorrow at {1}.").format(meeting.title|e, frappe.utils.format_datetime(meeting.scheduled_start, "HH:mm")) }}</p>
+{% if meeting.location %}<p>{{ _("Where") }}: {{ meeting.location|e }}</p>{% endif %}
+{% if meeting.join_url %}<p><a href="{{ meeting.join_url|e }}">{{ _("Join online") }}</a></p>{% endif %}
+<p>{{ _("Before the meeting, update your actions and add any issues or headlines.") }} <a href="{{ url }}">{{ _("Open the meeting") }}</a></p>

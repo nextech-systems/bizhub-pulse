@@ -1,0 +1,13 @@
+<div class="pulse-summary">
+<p><strong>{{ meeting.title|e }}</strong><br>
+{{ frappe.utils.format_datetime(meeting.scheduled_start, "d MMM yyyy, HH:mm") }}{% if meeting.average_rating %} · {{ _("Average rating") }} {{ meeting.average_rating }}{% endif %}{% if meeting.tangent_count %} · {{ _("Tangents called") }} {{ meeting.tangent_count }}{% endif %}</p>
+<p><strong>{{ _("Present") }}:</strong> {{ present|join(", ")|e or "–" }}<br>
+<strong>{{ _("Absent") }}:</strong> {{ absent|join(", ")|e or "–" }}</p>
+{% if minutes %}<h4>{{ _("Minutes") }}</h4>{% for m in minutes %}<p><strong>{{ m.topic|e }}</strong></p>{{ m.html }}{% endfor %}{% endif %}
+{% if priorities %}<h4>{{ _("Priorities") }}</h4><ul>{% for p in priorities %}<li>{{ p.title|e }} · {{ p.owner_name|e }} · {{ _(p.status) }}{% if p.kind == "Measured" and p.current_value is not none %} · {{ p.current_value }}{{ p.unit|e }} / {{ p.target_value }}{{ p.unit|e }}{% endif %} · {{ _("due") }} {{ frappe.utils.formatdate(p.due_date) }}</li>{% endfor %}</ul>{% endif %}
+{% if headlines %}<h4>{{ _("Headlines") }}</h4><ul>{% for h in headlines %}<li>{{ _(h.kind) }}: {{ h.headline|e }}</li>{% endfor %}</ul>{% endif %}
+{% if decisions %}<h4>{{ _("Decisions") }}</h4><ul>{% for d in decisions %}<li>{{ d.decision|e }}{% if d.reason %} <em>({{ d.reason|e }})</em>{% endif %}{% if d.review_date %} · {{ _("review by") }} {{ frappe.utils.formatdate(d.review_date) }}{% endif %}</li>{% endfor %}</ul>{% endif %}
+{% if actions %}<h4>{{ _("Actions") }}</h4><ul>{% for a in actions %}<li>{{ a.title|e }} · {{ a.owner_name|e }} · {{ _("due") }} {{ frappe.utils.formatdate(a.due_date) }}</li>{% endfor %}</ul>{% endif %}
+{% if issues %}<h4>{{ _("Issues closed") }}</h4><ul>{% for i in issues %}<li>{{ i.title|e }}: {{ _(i.status) }}{% if i.escalated_to %} {{ _("to") }} {{ i.escalated_to|e }}{% endif %}{% if i.resolution %} · {{ i.resolution|e }}{% endif %}</li>{% endfor %}</ul>{% endif %}
+{% if messages %}<h4>{{ _("Messages to other teams") }}</h4><ul>{% for m in messages %}<li>{{ m.message|e }}</li>{% endfor %}</ul>{% endif %}
+</div>

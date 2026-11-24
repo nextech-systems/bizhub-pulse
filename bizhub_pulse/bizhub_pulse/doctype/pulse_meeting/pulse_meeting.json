@@ -1,0 +1,318 @@
+{
+ "actions": [],
+ "autoname": "MTG-.YYYY.-.#####",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "space",
+  "template",
+  "status",
+  "cb1",
+  "scheduled_start",
+  "scheduled_end",
+  "facilitator",
+  "secretary",
+  "cb2",
+  "location",
+  "join_url",
+  "previous_meeting",
+  "auto_generated",
+  "reminder_sent",
+  "run_section",
+  "started_at",
+  "concluded_at",
+  "published_at",
+  "current_section",
+  "average_rating",
+  "tangent_count",
+  "agenda_section",
+  "sections",
+  "attendance_section",
+  "attendees",
+  "minutes_section",
+  "minutes",
+  "follow_up_section",
+  "follow_up_html",
+  "summary_section",
+  "summary",
+  "publications"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Space",
+   "options": "Pulse Space",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "idx": 3,
+   "label": "Template",
+   "options": "Pulse Meeting Template"
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 4,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Scheduled\nIn Progress\nConcluded\nPublished\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "idx": 5
+  },
+  {
+   "fieldname": "scheduled_start",
+   "fieldtype": "Datetime",
+   "idx": 6,
+   "in_list_view": 1,
+   "label": "Starts",
+   "reqd": 1
+  },
+  {
+   "fieldname": "scheduled_end",
+   "fieldtype": "Datetime",
+   "idx": 7,
+   "label": "Ends"
+  },
+  {
+   "fieldname": "facilitator",
+   "fieldtype": "Link",
+   "idx": 8,
+   "label": "Facilitator",
+   "options": "User"
+  },
+  {
+   "fieldname": "secretary",
+   "fieldtype": "Link",
+   "idx": 9,
+   "label": "Secretary",
+   "options": "User"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "idx": 10
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "idx": 11,
+   "label": "Location"
+  },
+  {
+   "fieldname": "join_url",
+   "fieldtype": "Data",
+   "idx": 12,
+   "label": "Teams / Zoom Link",
+   "options": "URL"
+  },
+  {
+   "fieldname": "previous_meeting",
+   "fieldtype": "Link",
+   "idx": 13,
+   "label": "Previous Meeting",
+   "options": "Pulse Meeting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "auto_generated",
+   "fieldtype": "Check",
+   "idx": 14,
+   "label": "Auto Generated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reminder_sent",
+   "fieldtype": "Check",
+   "idx": 15,
+   "label": "Reminder Sent",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "run_section",
+   "fieldtype": "Section Break",
+   "idx": 16,
+   "label": "Run"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "idx": 17,
+   "label": "Started At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "concluded_at",
+   "fieldtype": "Datetime",
+   "idx": 18,
+   "label": "Concluded At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "published_at",
+   "fieldtype": "Datetime",
+   "idx": 19,
+   "label": "Published At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_section",
+   "fieldtype": "Int",
+   "idx": 20,
+   "label": "Current Section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "average_rating",
+   "fieldtype": "Float",
+   "idx": 21,
+   "label": "Average Rating",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tangent_count",
+   "fieldtype": "Int",
+   "idx": 22,
+   "label": "Tangents Called",
+   "read_only": 1
+  },
+  {
+   "fieldname": "agenda_section",
+   "fieldtype": "Section Break",
+   "idx": 23,
+   "label": "Agenda"
+  },
+  {
+   "fieldname": "sections",
+   "fieldtype": "Table",
+   "idx": 24,
+   "label": "Sections",
+   "options": "Pulse Meeting Section"
+  },
+  {
+   "fieldname": "attendance_section",
+   "fieldtype": "Section Break",
+   "idx": 25,
+   "label": "Attendance"
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "idx": 26,
+   "label": "Attendees",
+   "options": "Pulse Meeting Attendee"
+  },
+  {
+   "fieldname": "minutes_section",
+   "fieldtype": "Section Break",
+   "idx": 27,
+   "label": "Minutes"
+  },
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Table",
+   "idx": 28,
+   "label": "Minutes",
+   "options": "Pulse Meeting Minute"
+  },
+  {
+   "fieldname": "follow_up_section",
+   "fieldtype": "Section Break",
+   "idx": 29,
+   "label": "Follow-up"
+  },
+  {
+   "fieldname": "follow_up_html",
+   "fieldtype": "HTML",
+   "idx": 30,
+   "label": "Follow-up",
+   "options": "<div class='text-muted'>Follow-up loads here.</div>"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "idx": 31,
+   "label": "Published Summary"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Text Editor",
+   "idx": 32,
+   "label": "Summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "publications",
+   "fieldtype": "Table",
+   "idx": 33,
+   "label": "Sent To",
+   "options": "Pulse Publication",
+   "read_only": 1
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Meeting",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "search_fields": "space,status,scheduled_start",
+ "show_title_field_in_link": 0,
+ "sort_field": "scheduled_start",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

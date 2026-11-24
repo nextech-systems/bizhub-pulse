@@ -1,0 +1,262 @@
+{
+ "actions": [],
+ "autoname": "PR-.YYYY.-.#####",
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "space",
+  "priority_owner",
+  "status",
+  "cb1",
+  "kind",
+  "quarter",
+  "due_date",
+  "visibility",
+  "result_section",
+  "success_criteria",
+  "measure_name",
+  "unit",
+  "cb2",
+  "start_value",
+  "target_value",
+  "current_value",
+  "current_as_of",
+  "milestones_section",
+  "milestones",
+  "support_section",
+  "contributors",
+  "support_needed",
+  "dependencies",
+  "closed_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Priority",
+   "reqd": 1
+  },
+  {
+   "fieldname": "space",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Space",
+   "options": "Pulse Space",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority_owner",
+   "fieldtype": "Link",
+   "idx": 3,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Owner",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "default": "On Track",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "idx": 4,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "On Track\nOff Track\nDone\nDropped"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "idx": 5
+  },
+  {
+   "default": "Milestones",
+   "fieldname": "kind",
+   "fieldtype": "Select",
+   "idx": 6,
+   "label": "Kind",
+   "options": "Milestones\nMeasured",
+   "reqd": 1
+  },
+  {
+   "description": "For example 2026 Q4",
+   "fieldname": "quarter",
+   "fieldtype": "Data",
+   "idx": 7,
+   "in_standard_filter": 1,
+   "label": "Quarter"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "idx": 8,
+   "in_list_view": 1,
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "default": "Team",
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "idx": 9,
+   "label": "Visibility",
+   "options": "Team\nRestricted"
+  },
+  {
+   "fieldname": "result_section",
+   "fieldtype": "Section Break",
+   "idx": 10,
+   "label": "Result"
+  },
+  {
+   "fieldname": "success_criteria",
+   "fieldtype": "Small Text",
+   "idx": 11,
+   "label": "Done Looks Like",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.kind=='Measured'",
+   "fieldname": "measure_name",
+   "fieldtype": "Data",
+   "idx": 12,
+   "label": "Measure",
+   "mandatory_depends_on": "eval:doc.kind=='Measured'"
+  },
+  {
+   "depends_on": "eval:doc.kind=='Measured'",
+   "description": "For example %, $, loads",
+   "fieldname": "unit",
+   "fieldtype": "Data",
+   "idx": 13,
+   "label": "Unit"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "idx": 14
+  },
+  {
+   "depends_on": "eval:doc.kind=='Measured'",
+   "fieldname": "start_value",
+   "fieldtype": "Float",
+   "idx": 15,
+   "label": "Starting Value"
+  },
+  {
+   "depends_on": "eval:doc.kind=='Measured'",
+   "fieldname": "target_value",
+   "fieldtype": "Float",
+   "idx": 16,
+   "label": "Target",
+   "mandatory_depends_on": "eval:doc.kind=='Measured'"
+  },
+  {
+   "depends_on": "eval:doc.kind=='Measured'",
+   "fieldname": "current_value",
+   "fieldtype": "Float",
+   "idx": 17,
+   "label": "Current Value"
+  },
+  {
+   "depends_on": "eval:doc.kind=='Measured'",
+   "fieldname": "current_as_of",
+   "fieldtype": "Date",
+   "idx": 18,
+   "label": "Current As Of",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.kind=='Milestones'",
+   "fieldname": "milestones_section",
+   "fieldtype": "Section Break",
+   "idx": 19,
+   "label": "Milestones"
+  },
+  {
+   "fieldname": "milestones",
+   "fieldtype": "Table",
+   "idx": 20,
+   "label": "Milestones",
+   "options": "Pulse Priority Milestone"
+  },
+  {
+   "fieldname": "support_section",
+   "fieldtype": "Section Break",
+   "idx": 21,
+   "label": "Contributors and Support"
+  },
+  {
+   "fieldname": "contributors",
+   "fieldtype": "Table MultiSelect",
+   "idx": 22,
+   "label": "Contributors",
+   "options": "Pulse Priority Contributor"
+  },
+  {
+   "fieldname": "support_needed",
+   "fieldtype": "Small Text",
+   "idx": 23,
+   "label": "Support Needed From Management"
+  },
+  {
+   "fieldname": "dependencies",
+   "fieldtype": "Small Text",
+   "idx": 24,
+   "label": "Dependencies and Obstacles"
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "idx": 25,
+   "label": "Closed On",
+   "read_only": 1
+  }
+ ],
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Priority",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pulse User",
+   "write": 1
+  }
+ ],
+ "search_fields": "title,space,status",
+ "show_title_field_in_link": 0,
+ "sort_field": "due_date",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

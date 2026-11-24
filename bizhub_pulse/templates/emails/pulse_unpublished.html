@@ -1,0 +1,3 @@
+<p>{{ _("The meeting {0} was concluded on {1}, but its summary and minutes have not been emailed to the team yet.").format(meeting.title|e, frappe.utils.formatdate(meeting.concluded_at)) }}</p>
+<p>{{ _("Open the meeting, check the minutes and click Review and publish. Everyone then gets the summary and their own Pulse list.") }}</p>
+<p><a href="{{ url }}">{{ _("Review and publish") }}</a></p>

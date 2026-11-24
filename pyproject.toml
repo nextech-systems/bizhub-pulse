@@ -1,0 +1,26 @@
+[project]
+name = "bizhub_pulse"
+authors = [{ name = "NextTech BizHub", email = "info@nextechbizhub.com" }]
+description = "Meetings, decisions and follow-through inside ERPNext"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+dynamic = ["version"]
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = { attr = "bizhub_pulse.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["bizhub_pulse*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.html", "*.js", "*.css", "*.txt", "*.md"]
+
+[tool.bench.frappe-dependencies]
+frappe = ">=14.0.0,<16.0.0"
+erpnext = ">=14.0.0,<16.0.0"

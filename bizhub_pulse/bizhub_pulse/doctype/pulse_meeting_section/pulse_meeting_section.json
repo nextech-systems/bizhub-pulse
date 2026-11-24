@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_type",
+  "title",
+  "planned_minutes",
+  "actual_seconds",
+  "started_at",
+  "guidance"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_type",
+   "fieldtype": "Select",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Section Type",
+   "options": "Opening\nScorecard\nPriorities\nHeadlines\nAction Review\nIssue Solving\nConclusion\nCustom",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "planned_minutes",
+   "fieldtype": "Int",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Planned Minutes"
+  },
+  {
+   "fieldname": "actual_seconds",
+   "fieldtype": "Int",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "Actual Seconds",
+   "read_only": 1
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "idx": 5,
+   "label": "Started At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "guidance",
+   "fieldtype": "Small Text",
+   "idx": 6,
+   "label": "Guidance"
+  }
+ ],
+ "issingle": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Meeting Section",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

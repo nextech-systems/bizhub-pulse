@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "creation": "2026-11-02 12:00:00.000000",
+ "custom": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "milestone",
+  "milestone_owner",
+  "due_date",
+  "done",
+  "done_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "milestone",
+   "fieldtype": "Data",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Milestone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "milestone_owner",
+   "fieldtype": "Link",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "idx": 3,
+   "in_list_view": 1,
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "done",
+   "fieldtype": "Check",
+   "idx": 4,
+   "in_list_view": 1,
+   "label": "Done"
+  },
+  {
+   "fieldname": "done_on",
+   "fieldtype": "Date",
+   "idx": 5,
+   "in_list_view": 1,
+   "label": "Done On",
+   "read_only": 1
+  }
+ ],
+ "issingle": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "BizHub Pulse",
+ "name": "Pulse Priority Milestone",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

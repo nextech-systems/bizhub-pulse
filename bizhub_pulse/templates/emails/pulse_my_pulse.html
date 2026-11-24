@@ -1,0 +1,13 @@
+{% macro row(a) -%}
+<li><a href="{{ a.url }}">{{ a.title|e }}</a> · {{ a.space|e }} · {{ _("due") }} {{ frappe.utils.formatdate(a.due_date) }}{% if a.carried_over %} · {{ _("carried over {0}×").format(a.carried_over) }}{% endif %}</li>
+{%- endmacro %}
+<p>{{ _("Hi {0}, here is everything on your Pulse list across all your teams.").format(user_name|e) }}</p>
+{% if new %}<h4>{{ _("New from this meeting") }}</h4><ul>{% for a in new %}{{ row(a) }}{% endfor %}</ul>{% endif %}
+{% if overdue %}<h4 style="color:#b42318">{{ _("Overdue") }}</h4><ul>{% for a in overdue %}{{ row(a) }}{% endfor %}</ul>{% endif %}
+{% if this_week %}<h4>{{ _("Due in the next 7 days") }}</h4><ul>{% for a in this_week %}{{ row(a) }}{% endfor %}</ul>{% endif %}
+{% if later %}<h4>{{ _("Later") }}</h4><ul>{% for a in later %}{{ row(a) }}{% endfor %}</ul>{% endif %}
+{% if issues %}<h4>{{ _("Issues you own") }}</h4><ul>{% for i in issues %}<li><a href="{{ frappe.utils.get_url_to_form('Pulse Issue', i.name) }}">{{ i.title|e }}</a> · {{ i.space|e }}</li>{% endfor %}</ul>{% endif %}
+{% if priorities %}<h4>{{ _("Your priorities") }}</h4><ul>{% for p in priorities %}<li><a href="{{ frappe.utils.get_url_to_form('Pulse Priority', p.name) }}">{{ p.title|e }}</a> · {{ p.space|e }} · <strong{% if p.status == "Off Track" %} style="color:#b42318"{% endif %}>{{ _(p.status) }}</strong>{% if p.due_date %} · {{ _("due") }} {{ frappe.utils.formatdate(p.due_date) }}{% endif %}</li>{% endfor %}</ul>{% endif %}
+{% if waiting_on %}<h4>{{ _("Waiting on others (you assigned)") }}</h4><ul>{% for a in waiting_on %}<li><a href="{{ frappe.utils.get_url_to_form('Pulse Action', a.name) }}">{{ a.title|e }}</a> · {{ a.owner_name|e }} · {{ _("due") }} {{ frappe.utils.formatdate(a.due_date) }}{% if a.overdue %} · <strong style="color:#b42318">{{ _("overdue") }}</strong>{% endif %}</li>{% endfor %}</ul>{% endif %}
+{% if meetings %}<h4>{{ _("Your next meetings") }}</h4><ul>{% for m in meetings %}<li><a href="{{ m.url }}">{{ m.title|e }}</a> · {{ frappe.utils.format_datetime(m.scheduled_start, "EEE d MMM, HH:mm") }}</li>{% endfor %}</ul>{% endif %}
+<p><a href="{{ url }}">{{ _("Open My Pulse") }}</a></p>
